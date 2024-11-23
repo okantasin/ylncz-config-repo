@@ -4,17 +4,7 @@ spring:
       secret: f4c7aab9bb2cfa2f4ef89d6d94c671c2427e926102c44b1407d3f79a7f75bec
   main:
     web-application-type: reactive
-  application:
-    name: gateway-service
   cloud:
-    config:
-      server:
-        git:
-          uri:  https://github.com/okantasin/ylncz-config-repo  # Git deposunun URL'si
-          default-label: main                            # Varsayılan branch (örneğin: main)
-          username: okan.tasin                       # (Opsiyonel) Eğer özel bir repo ise kullanıcı adı
-          password: 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                       # (Opsiyonel) Eğer özel bir repo ise şifre
-      bootstrap: true
     gateway:
       routes:
         - id: user-route
@@ -23,9 +13,6 @@ spring:
             - Path=/api/v1/users/**
           filters:
             - AuthorizationHeaderFilter
-server:
-  port: 8888
-
 eureka:
   client:
     service-url:
