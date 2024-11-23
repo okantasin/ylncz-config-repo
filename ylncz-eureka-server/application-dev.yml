@@ -1,0 +1,15 @@
+server:
+  port: 8761  # Eureka Server'ın çalışacağı port
+
+eureka:
+  client:
+    register-with-eureka: false  # Eureka Server, kendini kayıt etmeye çalışmaz
+    fetch-registry: false        # Diğer servislerden kayıt bilgisi almaya çalışmaz
+  server:
+    enable-self-preservation: false # Özellikle test ortamlarında, koruma
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
