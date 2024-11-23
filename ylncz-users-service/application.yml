@@ -1,21 +1,11 @@
 spring:
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/okantasin/ylncz-config-repo  # Git deposunun URL'si
-          default-label: main                            # Varsayılan branch (örneğin: main)
-          username: okan.tasin                       # (Opsiyonel) Eğer özel bir repo ise kullanıcı adı
-          password: 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                       # (Opsiyonel) Eğer özel bir repo ise şifre
-      bootstrap: true
   main:
     allow-bean-definition-overriding: true
   application:
     name: user-service
-  profiles:
-    active: mongo
-
-
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/users-service
 eureka:
   client:
     service-url:
