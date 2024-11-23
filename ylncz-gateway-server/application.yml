@@ -1,7 +1,4 @@
 spring:
-  security:
-    jwt:
-      secret: f4c7aab9bb2cfa2f4ef89d6d94c671c2427e926102c44b1407d3f79a7f75bec
   main:
     web-application-type: reactive
   cloud:
